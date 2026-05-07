@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-09-23T16:22:16 IST" name="Default suite" finished-at="2025-09-23T16:22:16 IST" duration-ms="72">
+    <groups>
+    </groups>
+    <test started-at="2025-09-23T16:22:16 IST" name="Default test" finished-at="2025-09-23T16:22:16 IST" duration-ms="72">
+      <class name="org.testing.annotation.Hindi_BM_TAM">
+        <test-method is-config="true" signature="UserRegistration()[pri:0, instance:org.testing.annotation.Hindi_BM_TAM@3eb738bb]" started-at="2025-09-23T16:22:16 IST" name="UserRegistration" finished-at="2025-09-23T16:22:16 IST" duration-ms="9" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserRegistration -->
+        <test-method signature="UserLogin()[pri:0, instance:org.testing.annotation.Hindi_BM_TAM@3eb738bb]" started-at="2025-09-23T16:22:16 IST" name="UserLogin" finished-at="2025-09-23T16:22:16 IST" duration-ms="7" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserLogin -->
+        <test-method is-config="true" signature="UserLogout()[pri:0, instance:org.testing.annotation.Hindi_BM_TAM@3eb738bb]" started-at="2025-09-23T16:22:16 IST" name="UserLogout" finished-at="2025-09-23T16:22:16 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserLogout -->
+        <test-method signature="UserMoneycounter()[pri:0, instance:org.testing.annotation.Hindi_BM_TAM@3eb738bb]" started-at="2025-09-23T16:22:16 IST" name="UserMoneycounter" finished-at="2025-09-23T16:22:16 IST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserMoneycounter -->
+        <test-method is-config="true" signature="UserRegistration()[pri:0, instance:org.testing.annotation.Hindi_BM_TAM@3eb738bb]" started-at="2025-09-23T16:22:16 IST" name="UserRegistration" finished-at="2025-09-23T16:22:16 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserRegistration -->
+        <test-method is-config="true" signature="UserLogout()[pri:0, instance:org.testing.annotation.Hindi_BM_TAM@3eb738bb]" started-at="2025-09-23T16:22:16 IST" name="UserLogout" finished-at="2025-09-23T16:22:16 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserLogout -->
+      </class> <!-- org.testing.annotation.Hindi_BM_TAM -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

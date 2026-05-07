@@ -1,0 +1,26 @@
+package session06;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+
+public class ValidateJsonResponseBody {
+
+    private Object responseString;
+
+	@Test
+    public void UserListResponseBody() {
+
+        RequestSpecification requestSpec = RestAssured.given();
+
+        requestSpec.baseUri("https://fakestoreapi.com");
+        requestSpec.basePath("/users/1");
+
+        Response response = requestSpec.get();
+
+        System.out.println(response.asString());
+        Assert.assertEquals(responseString.contains("George"), true,"Check for presence of George");
+    }
+}

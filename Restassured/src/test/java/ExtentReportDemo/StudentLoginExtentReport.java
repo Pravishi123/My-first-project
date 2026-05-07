@@ -1,0 +1,147 @@
+package ExtentReportDemo;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.ITestResult;
+import org.testng.annotations.*;
+
+import com.aventstack.extentreports.*;
+import com.aventstack.extentreports.markuputils.*;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.aventstack.extentreports.reporter.configuration.Theme;
+
+public class StudentLoginExtentReport {
+
+    WebDriver driver;
+
+    ExtentSparkReporter htmlReporter;
+    ExtentReports reports;
+    ExtentTest test;
+
+    @BeforeTest
+    public void setupReport() {
+
+        htmlReporter = new ExtentSparkReporter("StudentLoginReport.html");
+
+        reports = new ExtentReports();
+        reports.attachReporter(htmlReporter);
+
+        reports.setSystemInfo("Machine", "PC");
+        reports.setSystemInfo("OS", "Windows");
+        reports.setSystemInfo("Browser", "Chrome");
+        reports.setSystemInfo("Tester", "Pravishi");
+
+        htmlReporter.config().setDocumentTitle("Student Automation Report");
+        htmlReporter.config().setReportName("Intercambio Student Login");
+        htmlReporter.config().setTheme(Theme.STANDARD);
+    }
+
+    @BeforeMethod
+    public void launchBrowser() {
+
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    }
+
+    @Test(priority = 1)
+    public void LaunchBrowserAndOpenURL() {
+
+        test = reports.createTest("Launch Browser And Open URL");
+
+        driver.get("http://intercambio-stg.techsaga.live/");
+
+        String currentUrl = driver.getCurrentUrl();
+
+        Assert.assertTrue(currentUrl.contains("intercambio"));
+    }
+
+    @Test(priority = 2)
+    public void VerifyTitle() {
+
+        test = reports.createTest("Verify Title");
+
+        driver.get("http://intercambio-stg.techsaga.live/");
+
+        String title = driver.getTitle();
+
+        Assert.assertTrue(title.length() < 0);
+    }
+
+    @Test(priority = 3)
+    public void VerifyLogo() {
+
+        test = reports.createTest("Verify Logo");
+
+        driver.get("http://intercambio-stg.techsaga.live/");
+
+        WebElement logo = driver.findElement(By.xpath("/html/body/header/div/div/div/div[1]/div/div/a/img"));
+
+        Assert.assertTrue(logo.isDisplayed());
+    }
+
+    @Test(priority = 4)
+    public void VerifyStudentLogin() {
+
+        test = reports.createTest("Verify Student Login");
+
+        driver.get("http://intercambio-stg.techsaga.live/");
+
+        driver.findElement(By.xpath("//input[@type='email']")).sendKeys("ragini@yopmail.com");
+
+        driver.findElement(By.xpath("//input[@type='password']")).sendKeys("12345678");
+
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
+
+        Assert.assertTrue(true);
+    }
+
+    @Test(priority = 5)
+    public void VerifyUserName() {
+
+        test = reports.createTest("Verify Username After Login");
+
+        driver.get("http://intercambio-stg.techsaga.live/");
+
+        driver.findElement(By.xpath("//input[@type='email']")).sendKeys("ragini@yopmail.com");
+
+        driver.findElement(By.xpath("//input[@type='password']")).sendKeys("12345678");
+
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
+
+        WebElement dashboard = driver.findElement(By.tagName("body"));
+
+        Assert.assertTrue(dashboard.isDisplayed());
+    }
+
+    @AfterMethod
+    public void getResult(ITestResult result) {
+
+        if (result.getStatus() == ITestResult.SUCCESS) {
+            test.log(Status.PASS,
+                    MarkupHelper.createLabel(result.getName() + " PASS", ExtentColor.GREEN));
+        }
+
+        else if (result.getStatus() == ITestResult.FAILURE) {
+            test.log(Status.FAIL,
+                    MarkupHelper.createLabel(result.getName() + " FAIL", ExtentColor.RED));
+        }
+
+        else if (result.getStatus() == ITestResult.SKIP) {
+            test.log(Status.SKIP,
+                    MarkupHelper.createLabel(result.getName() + " SKIPPED", ExtentColor.ORANGE));
+        }
+
+       // driver.quit();
+    }
+
+    @AfterTest
+    public void tearDown() {
+        reports.flush();
+    }
+}

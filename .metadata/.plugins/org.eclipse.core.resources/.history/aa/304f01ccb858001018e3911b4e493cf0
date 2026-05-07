@@ -1,0 +1,49 @@
+package Example;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+public class Student {
+	public static void main(String[] args) {
+        WebDriver driver = new ChromeDriver();
+        driver.get("http://intercambio-stg.techsaga.live/");
+        driver.manage().window().maximize();
+        //Sign-up//
+        driver.findElement(By.xpath("/html/body/main/div/div/div/div/div/div/div[2]/div/p/a")).click();
+        //Student//
+        driver.findElement(By.xpath("/html/body/main/section/div/div[2]/div[1]/a/div/div[2]/p")).click();
+        driver.findElement(By.xpath("//*[@id=\"name\"]")).sendKeys("Sanya");
+        //Lname//
+        driver.findElement(By.xpath("//*[@id=\"l_name\"]")).sendKeys("Singh");
+        //Email//
+        driver.findElement(By.xpath("//*[@id=\"createFrm\"]/div[2]/div/div/div[2]/input")).sendKeys("sanya@yopmail.com");
+        //Password//
+        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("12345678");
+        //Confirm password//
+        driver.findElement(By.xpath("//*[@id=\"password_confirmation\"]")).sendKeys("12345678");
+        //Sign-up btn//
+        driver.findElement(By.xpath("//*[@id=\"createFrm\"]/div[4]/button")).click();
+        //Verify mail//
+        driver.get("https://yopmail.com/en/");
+        //Search//
+        driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys("sanya");
+        driver.findElement(By.xpath("//*[@id=\"refreshbut\"]/button")).click();
+        //Click verify btn//
+        driver.findElement(By.xpath("//*[@id=\"mail\"]/div/center/div[2]/table[1]/tbody/tr[3]/td/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/div/a/button")).click();
+        //
+        driver.get("http://intercambio-stg.techsaga.live/verify_email/161");
+        // 
+        driver.findElement(By.xpath("/html/body/main/div/div/div/div/div/div/form/div[1]/div[2]/input")).sendKeys("sanya@yopmail.com");
+        //password//
+        driver.findElement(By.xpath("//*[@id=\"password-input\"]")).sendKeys("12345678");
+        //Sign-in//
+        driver.findElement(By.xpath("/html/body/main/div/div/div/div/div/div/form/div[4]/button")).click();
+        
+        
+        
+	}
+        
+
+	}

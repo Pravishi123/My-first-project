@@ -1,0 +1,20 @@
+package session06;
+
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+import io.restassured.response.ResponseBody;
+import io.restassured.specification.RequestSpecification;
+
+public class ValidateJsonResponseBody {
+public void UserListResponseBody(RestAssured requestSpec) {
+	RequestSpecification respectSpec=RestAssured.given();
+	respectSpec.baseUri("https://fakestoreapi.com");
+	respectSpec.basePath("/users/1");
+	//Perform get request
+	Response response=requestSpec.get();
+	//Read response body
+	ResponseBody responseBody=response.getBody();
+	String responseString=responseBody.asString();
+	System.out.println("Response Body"+ responseString);
+}
+}

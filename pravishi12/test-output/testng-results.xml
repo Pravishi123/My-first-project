@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-04-16T00:56:14 IST" name="Default suite" finished-at="2026-04-16T00:56:15 IST" duration-ms="46">
+    <groups>
+    </groups>
+    <test started-at="2026-04-16T00:56:14 IST" name="Default test" finished-at="2026-04-16T00:56:15 IST" duration-ms="46">
+      <class name="pravishi12.Personal_loan">
+        <test-method is-config="true" signature="before_suite()[pri:0, instance:pravishi12.Personal_loan@4c12331b]" started-at="2026-04-16T00:56:14 IST" name="before_suite" finished-at="2026-04-16T00:56:14 IST" duration-ms="18" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- before_suite -->
+        <test-method signature="personal_loan()[pri:0, instance:pravishi12.Personal_loan@4c12331b]" started-at="2026-04-16T00:56:15 IST" name="personal_loan" finished-at="2026-04-16T00:56:15 IST" duration-ms="7" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- personal_loan -->
+      </class> <!-- pravishi12.Personal_loan -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

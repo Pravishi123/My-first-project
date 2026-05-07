@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-11-28T11:54:58 IST" name="Default suite" finished-at="2025-11-28T11:55:08 IST" duration-ms="10092">
+    <groups>
+    </groups>
+    <test started-at="2025-11-28T11:54:58 IST" name="Default test" finished-at="2025-11-28T11:55:08 IST" duration-ms="10092">
+      <class name="jiomart123.Finalcode">
+        <test-method signature="addToCartTest()[pri:0, instance:jiomart123.Finalcode@7c7b252e]" started-at="2025-11-28T11:54:58 IST" name="addToCartTest" finished-at="2025-11-28T11:55:08 IST" duration-ms="10050" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addToCartTest -->
+      </class> <!-- jiomart123.Finalcode -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
